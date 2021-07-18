@@ -1,6 +1,7 @@
 package com.company;
 
 import javax.sound.midi.SysexMessage;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -75,33 +76,149 @@ public class Main {
         // - Allow the user to enter the principal, rate and time
         // - interactively print out the simple interest.
 
-        // Initialize the scanner
+//        // Initialize the scanner
+//        Scanner scanner = new Scanner(System.in);
+//
+//        // Prompt the user to enter the values we need
+//        System.out.print("Enter the principal: ");
+//        float principal = scanner.nextFloat();
+//
+//        System.out.print("Enter the rate: ");
+//        float rate = scanner.nextFloat();
+//
+//        System.out.print("Enter the time: ");
+//        float time = scanner.nextFloat();
+//
+//        // Perform the calculation.
+//        float interest = (principal * rate * time) / 100;
+//
+//        // Log the output to the console.
+//        System.out.println("The interest is: " + interest);
+
+        // Assignment
+        // Create a class called Animal.
+        // - legs, eyes, color.
+        // Create a class called Bird as a child class to Animal
+        // - wings, ability to fly(this is a method), ability to sing.
+        // Create a class called Apes as a child class to Animal
+        // - hands, ability to walk(this is a method), ability to grab objects.
+
+//        Bird bird = new Bird(2, 2,"Red", 2);
+//        Ape ape = new Ape(2, 2, "Black", 2);
+//
+//        bird.fly();
+//        bird.sing();
+//        System.out.println(); // prints a new line without anything.
+//        ape.walk("the river");
+//        ape.pickObjects("stones");
+
+
+        // 15mins
+        // Write a program that implements the following formula using
+        // RECURSION.
+        // nCr = n!/(n-r)!r!
+        // Factorial: 4! = 4 x 3 x 2 x 1 = 24
+        // create a method called factorial, to find the factorial of a number
+        // entered as a parameter.
+        // return the value
+
+//        // Initialize scanner
+//        Scanner scanner = new Scanner(System.in);
+//
+//        // Prompt the user to enter the values of n and r
+//        System.out.print("Enter the value of n: ");
+//        int n = scanner.nextInt();
+//
+//        System.out.print("Enter the value of r: ");
+//        int r = scanner.nextInt();
+//
+//        // Perform calculation based on formula.
+//        float nCr = factorial(n) / (factorial(n-r) * factorial(r));
+//
+//        // output result
+//        System.out.println("The answer is " + nCr);
+
+        // 10 mins
+        // String Reversal
+        // - Allow the user to enter a string,
+        // - Interactively Print out the string in reverse.
+        // e.g egg - gge,
+            // 012
+        // jade is a boy - yob a si edaj
+
+//        // Initialize scanner
+//        Scanner scanner = new Scanner(System.in);
+//
+//        // Prompt the user to enter a string
+//        System.out.print("Enter a string: ");
+//        String userString = scanner.nextLine(); // This is accepting a line of strings
+//
+//
+//        // Initialize a string to hold the reverse of the entered string
+//        String reversedString = "";
+//
+//        // Loop through the string in reverse and append the characters to
+//        // the reverse string
+//        for (int i = userString.length() - 1; i >= 0 ; i--) {
+//            reversedString += userString.charAt(i);
+//        }
+//
+//        // Output the reversed String
+//        System.out.println(reversedString);
+
+        // 10 mins
+        // Write a program that allows or takes in 10 numbers from the user in an array
+        // finds the largest number.
+
+
+
+        // Initialize scanner
         Scanner scanner = new Scanner(System.in);
 
-        // Prompt the user to enter the values we need
-        System.out.print("Enter the principal: ");
-        float principal = scanner.nextFloat();
+        // Prompt the user to enter the numbers of numbers they want to enter
+        System.out.print("How many numbers do you want to enter?: ");
+        int[] numbers = new int[scanner.nextInt()]; // We use the number entered to create an array of that size
 
-        System.out.print("Enter the rate: ");
-        float rate = scanner.nextFloat();
+        // Populate the array with the values.
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print("Enter the next number: ");
+            numbers[i] = scanner.nextInt();
+        }
 
-        System.out.print("Enter the time: ");
-        float time = scanner.nextFloat();
+        // to find the maximum number
+        // we are going to assign the first element in the array as the maximum
+        int maximum = numbers[0]; // [-2, -5, -9, -19]
 
-        // Perform the calculation.
-        float interest = (principal * rate * time) / 100;
+        // use a loop to compare the maximum with the other numbers
+        for (int i = 0; i < numbers.length; i++) {
+            if (maximum < numbers[i]) { // if our maximum value is less than the current number then
+                // we take that value as our new maximum.
+                maximum = numbers[i];
+            }
+        }
 
-        // Log the output to the console.
-        System.out.println("The interest is: " + interest);
+        // output the result to the console.
+        System.out.println("The maximum number in " + Arrays.toString(numbers) + " is " + maximum);
+
+
+
+
+
     }
 
-    // Assignment
-    // Create a class called Animal.
-    // - legs, eyes, color.
-    // Create a class called Bird as a child class to Animal
-    // - wings, ability to fly(this is a method), ability to sing.
-    // Create a class called Apes as a child class to Animal
-    // - hands, ability to walk(this is a method), ability to grab objects.
+    public static int factorial(int number) { // 4
+        if (number == 0 || number == 1) { // a base case
+            return 1;
+        } else {
+            return number * factorial(number - 1); // 24
+            // 4 * 3
+            // 3 * 2
+            // 2 * 1
+            // 1 *
+        }
+    }
+
+
 
 
 }
